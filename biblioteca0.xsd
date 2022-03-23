@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <xs:element name="biblioteca">
         <xs:complexType>
             <xs:sequence>
-                <xs:element minOccurs= "1" maxOccurs="unbounded" ref="libro"/>
+                <xs:element maxOccurs="unbounded" ref="libro"/>
             </xs:sequence>
+            <xs:attribute ref="xsi:noNamespaceSchemaLocation" use="required"/>
         </xs:complexType>
     </xs:element>
     <xs:element name="libro">
@@ -23,7 +24,7 @@
     <xs:element name="titulo" type="xs:string"/>
     <xs:element name="autor">
         <xs:complexType mixed="true">
-            <xs:attribute name="fechaNacimiento"/>
+            <xs:attribute name="fechaNacimiento" use="required"/>
         </xs:complexType>
     </xs:element>
     <xs:element name="fechaPublicacion">
